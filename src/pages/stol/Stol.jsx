@@ -8,14 +8,16 @@ import { Link } from "react-router-dom";
 import personalAccIcon from "../../assets/personal-acc-icon.png";
 
 // Исправляем URL для Socket.io
-const socket = io("wss://192.168.1.7:8080/", {
+const socket = io("https://mg9dsfbm-8080.euw.devtunnels.ms/", {
     transports: ["websocket"],
     cors: {
         origin: "https://restaraunt-client-app.vercel.app",
+        origin: "http://localhost:3000/",
         credentials: true,
     },
     autoConnect: true,
 });
+
 
 const Stol = () => {
     const [tables, setTables] = useState([]);
@@ -26,7 +28,7 @@ const Stol = () => {
     // Функция для загрузки столов
     const fetchTables = async () => {
         try {
-            const response = await axios.get("http://192.168.1.7:8080/api/tables/all");
+            const response = await axios.get("https://mg9dsfbm-8080.euw.devtunnels.ms/api/tables/all");
             setTables(response.data.innerData);
         } catch (error) {
             console.error("Ошибка загрузки столов:", error);
@@ -96,7 +98,7 @@ const Stol = () => {
         }
 
         try {
-            const response = await axios.get(`http://192.168.1.7:8080/api/tables/${table._id}`, {
+            const response = await axios.get(`https://mg9dsfbm-8080.euw.devtunnels.ms/api/tables/${table._id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             const tableData = response.data.innerData;
