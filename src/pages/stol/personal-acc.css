@@ -1,0 +1,303 @@
+/* Общие стили */
+.personal-acc-container {
+     min-height: 100vh;
+     background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+     color: #ffffff;
+     padding: 16px;
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     box-sizing: border-box;
+}
+
+/* Шапка */
+.personal-acc-header {
+     display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 30px;
+          padding: 15px;
+          background: rgba(30, 30, 30, 0.9);
+          border-radius: 12px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.personal-acc-btn {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 6px 12px;
+     background: rgba(40, 40, 40, 0.8);
+     border: none;
+     border-radius: 6px;
+     color: #ffffff;
+     text-decoration: none;
+     font-size: 12px;
+     font-weight: 500;
+     transition: background 0.3s ease, transform 0.2s ease;
+     cursor: pointer;
+}
+
+.personal-acc-btn:hover {
+     background: rgba(60, 60, 60, 0.8);
+     transform: translateY(-1px);
+}
+
+.personal-acc-btn-home {
+     width: 32px;
+     height: 32px;
+     font-size: 14px;
+}
+
+.personal-acc-btn-logout {
+     background: rgba(80, 20, 20, 0.8);
+}
+
+.personal-acc-btn-logout:hover {
+     background: rgba(120, 30, 30, 0.8);
+}
+
+.personal-acc-btn-text {
+     margin-right: 6px;
+}
+
+.personal-acc-btn-icon {
+     width: 16px;
+     height: 16px;
+     display: none;
+}
+
+/* Основной контент */
+.personal-acc-main {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 100%;
+     padding: 16px 0;
+}
+
+.personal-acc-title {
+     font-size: 20px;
+     font-weight: 500;
+     text-align: center;
+     margin: 0 0 24px;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     color: #e0e0e0;
+}
+
+/* Контент */
+.personal-acc-content {
+     width: 100%;
+     max-width: 1000px;
+     margin: 0 auto;
+}
+
+/* Информация о пользователе */
+.personal-acc-user-info {
+     text-align: center;
+     margin-bottom: 20px;
+}
+
+.personal-acc-username {
+     font-size: 16px;
+     font-weight: 500;
+     color: #e0e0e0;
+     background: rgba(255, 255, 255, 0.05);
+     padding: 6px 12px;
+     border-radius: 16px;
+     display: inline-block;
+}
+
+/* Статистика */
+.personal-acc-stats {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+     gap: 16px;
+     width: 100%;
+}
+
+.personal-acc-card {
+     background: rgba(30, 30, 30, 0.9);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     border-radius: 8px;
+     padding: 12px;
+     text-align: center;
+     transition: transform 0.3s ease;
+     backdrop-filter: blur(4px);
+}
+
+.personal-acc-card:hover {
+     transform: translateY(-2px);
+}
+
+.personal-acc-card-revenue {
+     background: linear-gradient(135deg, #2a6041 0%, #1a3c34 100%);
+}
+
+.personal-acc-label {
+     font-size: 12px;
+     font-weight: 400;
+     color: rgba(255, 255, 255, 0.7);
+     margin-bottom: 8px;
+     display: block;
+     text-transform: uppercase;
+}
+
+.personal-acc-value {
+     font-size: 18px;
+     font-weight: 600;
+     color: #ffffff;
+}
+
+/* Лоадер */
+.personal-acc-loader {
+     font-size: 14px;
+     font-weight: 500;
+     color: rgba(255, 255, 255, 0.6);
+     text-align: center;
+     padding: 20px;
+     animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+     0% {
+          opacity: 0.6;
+     }
+
+     50% {
+          opacity: 1;
+     }
+
+     100% {
+          opacity: 0.6;
+     }
+}
+
+/* Адаптивность для десктопа */
+@media (min-width: 769px) {
+     .personal-acc-container {
+          padding: 24px;
+     }
+
+     .personal-acc-header {
+          padding: 12px 24px;
+     }
+
+     .personal-acc-btn {
+          padding: 8px 16px;
+          font-size: 14px;
+     }
+
+     .personal-acc-btn-home {
+          width: 36px;
+          height: 36px;
+          font-size: 16px;
+     }
+
+     .personal-acc-title {
+          font-size: 24px;
+     }
+
+     .personal-acc-username {
+          font-size: 18px;
+          padding: 8px 16px;
+     }
+
+     .personal-acc-card {
+          padding: 16px;
+     }
+
+     .personal-acc-value {
+          font-size: 20px;
+     }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+     .personal-acc-container {
+          padding: 12px;
+     }
+
+     .personal-acc-header {
+          padding: 14px 16px;
+     }
+
+     .personal-acc-title {
+          font-size: 20px;
+          margin-bottom: 20px;
+     }
+
+     .personal-acc-stats {
+          grid-template-columns: 1fr;
+          gap: 12px;
+     }
+
+     .personal-acc-card {
+          padding: 12px;
+     }
+
+     .personal-acc-username {
+          font-size: 16px;
+     }
+
+     .personal-acc-value {
+          font-size: 18px;
+     }
+}
+
+@media (max-width: 480px) {
+     .personal-acc-btn {
+          padding: 6px;
+          font-size: 10px;
+     }
+
+     .personal-acc-btn-home {
+          width: 28px;
+          height: 28px;
+          font-size: 12px;
+     }
+
+     .personal-acc-btn-logout {
+          width: 28px;
+          height: 28px;
+          padding: 0;
+          border-radius: 50%;
+     }
+
+     .personal-acc-btn-text {
+          display: none;
+     }
+
+     .personal-acc-btn-icon {
+          display: block;
+          width: 14px;
+          height: 14px;
+     }
+
+     .personal-acc-title {
+          font-size: 18px;
+     }
+
+     .personal-acc-username {
+          font-size: 14px;
+          padding: 4px 10px;
+     }
+
+     .personal-acc-card {
+          padding: 10px;
+     }
+
+     .personal-acc-label {
+          font-size: 10px;
+     }
+
+     .personal-acc-value {
+          font-size: 16px;
+     }
+
+     .personal-acc-loader {
+          font-size: 12px;
+     }
+}

@@ -1,0 +1,27 @@
+@font-face {
+     src: url(../src/fonts/Inter_18pt-SemiBold.ttf);
+     font-family: "Inter SemiBold";
+}
+
+@font-face {
+     src: url(../src/fonts/Inter_18pt-Regular.ttf);
+     font-family: "Inter Regular";
+}
+
+@font-face {
+     src: url(../src/fonts/Inter_18pt-Medium.ttf);
+     font-family: "Inter Medium";
+}
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     overscroll-behavior: none;
+     -webkit-tap-highlight-color: transparent;
+     font-family: "Inter Medium";
+}
+
+a {
+     text-decoration: none;
+}
