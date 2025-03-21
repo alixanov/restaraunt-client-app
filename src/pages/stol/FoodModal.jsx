@@ -5,14 +5,13 @@ import { io } from "socket.io-client";
 import "./food-modal.css";
 
 // Настройка Socket.io для подключения к серверу
-const socket = io("http://192.168.1.7:8080/", {
-     transports: ["websocket"],
-     cors: {
-          origin: "http://localhost:3000", // Клиентский домен
-          credentials: true,
-     },
-     autoConnect: true,
-     secure: true, // Используем HTTPS
+const socket = io("wss://192.168.1.7:8080/", {
+  transports: ["websocket"],
+  cors: {
+    origin: "https://restaraunt-client-app.vercel.app",
+    credentials: true,
+  },
+  autoConnect: true,
 });
 
 const FoodModal = ({ isOpen, onClose, table }) => {

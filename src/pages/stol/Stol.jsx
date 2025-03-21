@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
 import personalAccIcon from "../../assets/personal-acc-icon.png";
 
 // Исправляем URL для Socket.io
-const socket = io(`http://192.168.1.7:8080/:${process.env.REACT_APP_PORT || 8080}`, {
+const socket = io("wss://192.168.1.7:8080/", {
     transports: ["websocket"],
     cors: {
-        origin: ["http://localhost:3000/"],
+        origin: "https://restaraunt-client-app.vercel.app",
         credentials: true,
     },
     autoConnect: true,
