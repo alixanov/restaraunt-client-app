@@ -22,7 +22,7 @@ const PersonalAcc = () => {
                const decodedToken = jwtDecode(token);
                const workerId = decodedToken.id;
 
-               const response = await axios.get('https://mg9dsfbm-8080.euw.devtunnels.ms/api/sales/report', {
+               const response = await axios.get('https://tsvnmfnb-8080.euw.devtunnels.ms/api/sales/report', {
                     headers: { Authorization: `Bearer ${token}` },
                });
 

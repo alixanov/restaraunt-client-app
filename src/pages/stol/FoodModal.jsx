@@ -5,7 +5,7 @@ import { io } from "socket.io-client";
 import "./food-modal.css";
 
 // Настройка Socket.io для подключения к серверу
-const socket = io("https://mg9dsfbm-8080.euw.devtunnels.ms/", {
+const socket = io("https://tsvnmfnb-8080.euw.devtunnels.ms/", {
   transports: ["websocket"],
   cors: {
        origin: "https://restaraunt-client-app.vercel.app",
@@ -29,7 +29,7 @@ const FoodModal = ({ isOpen, onClose, table }) => {
 
      const fetchTableData = async (token, currentWorkerId) => {
           try {
-               const tableResponse = await axios.get(`https://mg9dsfbm-8080.euw.devtunnels.ms/api/tables/${table._id}`, {
+               const tableResponse = await axios.get(`https://tsvnmfnb-8080.euw.devtunnels.ms/api/tables/${table._id}`, {
                     headers: { Authorization: `Bearer ${token}` },
                });
                const tableData = tableResponse.data.innerData;
@@ -40,7 +40,7 @@ const FoodModal = ({ isOpen, onClose, table }) => {
                );
 
                const ordersResponse = await axios.get(
-                    `https://mg9dsfbm-8080.euw.devtunnels.ms/api/orders/table/${table._id}?workerId=${currentWorkerId}`,
+                    `https://tsvnmfnb-8080.euw.devtunnels.ms/api/orders/table/${table._id}?workerId=${currentWorkerId}`,
                     { headers: { Authorization: `Bearer ${token}` } }
                );
                setActiveOrders(ordersResponse.data.innerData || []);
@@ -75,7 +75,7 @@ const FoodModal = ({ isOpen, onClose, table }) => {
                fetchTableData(token, currentWorkerId);
 
                axios
-                    .get("https://mg9dsfbm-8080.euw.devtunnels.ms/api/foods/all", {
+                    .get("https://tsvnmfnb-8080.euw.devtunnels.ms/api/foods/all", {
                          headers: { Authorization: `Bearer ${token}` },
                     })
                     .then((response) => {
@@ -219,7 +219,7 @@ const FoodModal = ({ isOpen, onClose, table }) => {
           };
 
           axios
-               .post("https://mg9dsfbm-8080.euw.devtunnels.ms/api/orders/create", orderData, {
+               .post("https://tsvnmfnb-8080.euw.devtunnels.ms/api/orders/create", orderData, {
                     headers: { Authorization: `Bearer ${token}` },
                })
                .then((response) => {
@@ -252,7 +252,7 @@ const FoodModal = ({ isOpen, onClose, table }) => {
 
                const closePromises = activeOrders.map((order) =>
                     axios.post(
-                         `https://mg9dsfbm-8080.euw.devtunnels.ms/api/orders/close/${order._id}`,
+                         `https://tsvnmfnb-8080.euw.devtunnels.ms/api/orders/close/${order._id}`,
                          { workerId: currentWorkerId },
                          { headers: { Authorization: `Bearer ${token}` } }
                     )
@@ -265,7 +265,7 @@ const FoodModal = ({ isOpen, onClose, table }) => {
                     const total = calculateTotalPrice();
                     try {
                          await axios.post(
-                              `https://mg9dsfbm-8080.euw.devtunnels.ms/api/print-all-receipts`,
+                              `https://tsvnmfnb-8080.euw.devtunnels.ms/api/print-all-receipts`,
                               {
                                    tableId: table._id,
                                    items: items.map((item) => ({
